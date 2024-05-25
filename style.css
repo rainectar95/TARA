@@ -114,11 +114,11 @@ height: max-content;
   -moz-border-radius:16px;
 }
 
-#modal-1{
+/* #modal-1{
   
 bottom: 80px;
 
-}
+} */
 .modal{
 z-index: 100;
 margin: 0px 8px;
@@ -222,6 +222,7 @@ text-align: center;
 }
 
 .img{
+  height: 120px;
   width: 68vw;
   object-fit: contain;
   padding-bottom: 10px;
