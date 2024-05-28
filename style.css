@@ -101,7 +101,6 @@ margin: 0px 8px;
 clip-path: fill-box;
 -webkit-clip-path: inset(0%);
 -moz-border-radius:16px;
-height: max-content;
 }
 
 .content{
