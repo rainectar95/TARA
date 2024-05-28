@@ -84,7 +84,7 @@ animation: button 1s ease both;
 .main{
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   background-color: #00000018;
   clip-path: fill-box;
   border-radius: 16px;
