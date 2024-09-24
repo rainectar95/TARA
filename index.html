@@ -453,6 +453,41 @@
         </div>
             </nav>
         </div>
+        <script>
+            let deferredPrompt;
+    // Check if the browser supports the Web App Manifest API
+    if ('serviceWorker' in navigator) {
+        // Register the service worker
+        navigator.serviceWorker.register('service-worker.js')
+            .then(registration => {
+            // Check if the user has already installed the app
+            if (registration.installing) {
+                console.log('App is already installed');
+            } else {
+                // Show the installation prompt
+                registration.waiting.postMessage('skipWaiting');
+                setTimeout(() => {
+                registration.waiting.postMessage('skipWaiting');
+                }, 2000);
+            }
+            })
+            .catch(error => {
+            console.error('Error registering service worker:', error);
+            });
+        } else {
+        console.log('Browser does not support the Web App Manifest API');
+        }
+
+    // Show the notification
+    navigator.serviceWorker.ready.then(registration => {
+      registration.showNotification('Install Tare App', {
+        body: 'Tap to install the Tare app and access it offline.',
+        icon: 'assets/icon.png',
+        tag: 'tare-app-install'
+      });
+    });
+
+        </script>
         <script src="button-sheets.js"></script>
         <script src="app.js"></script>
     </body>
